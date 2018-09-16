@@ -1,4 +1,4 @@
-# Azure Button
+# Lab 1 - Azure Button
 
 ## Create the IoT Hub in Azure
 
