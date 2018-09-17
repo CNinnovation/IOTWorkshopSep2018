@@ -22,7 +22,7 @@ Hold the power button for 5 sec. LED changes from green flash to yellow, then re
 Configure User JSON to be sent from the button, e.g.
 
 ```json
-{"ButtonId": "Christian"}
+{"Group": "Training", "ButtonId": "Christian"}
 ```
 
 Enter the IoT Hub Configuration
