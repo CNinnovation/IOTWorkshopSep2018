@@ -1,0 +1,40 @@
+# Lab Analytics
+
+Azure Stream Analytics
+
+## Preparation
+
+Download the [sample sensor data](https://raw.githubusercontent.com/Azure/azure-stream-analytics/master/Samples/GettingStarted/HelloWorldASA-InputStream.json).
+
+Create a blob object in Azure Storage and upload the sensor data.
+
+## Stream Analytics
+
+Create a stream analytics job with 1 streaming unit and the *cloud* hosting environment.
+
+Add the blob storage to the input of the analytics job.
+
+Set a new blob storage to the output
+
+Configure this transformation query. Rename the output and input accordingly.
+
+```SQL
+SELECT 
+System.Timestamp AS OutputTime,
+dspl AS SensorName,
+Avg(temp) AS AvgTemperature
+INTO
+  BlobOutput
+FROM
+  BlobInput TIMESTAMP BY time
+GROUP BY TumblingWindow(second,30),dspl
+HAVING Avg(temp)>100
+```
+
+Accept late arriving events to 20 days (configure event ordering)
+
+Start the stream analytics job (see overview for the start button).
+
+
+
+
